@@ -1,0 +1,10 @@
+.good {
+  overflow: hidden;
+  color: rgba(77, 82, 82, 0.411);
+  font-weight: 900;
+  text-decoration: line-through;
+}
+
+.display {
+  display: none;
+}
