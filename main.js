@@ -9,40 +9,42 @@ const form = document.querySelector(".form");
 function createTask(e) {
   e.preventDefault();
 
-  //takes the input
-  const realTask = userInput.value;
+  if (!userInput.value.trim() == "") {
+    //takes the input
+    const realTask = userInput.value;
 
-  //creates a div inside showtask div which is in html
-  const stuff = document.createElement("div");
+    //creates a div inside showtask div which is in html
+    const stuff = document.createElement("div");
 
-  //these are the childs of stuff
+    //these are the childs of stuff
 
-  const input = document.createElement("input");
-  const button = document.createElement("button");
-  const makeLi = document.createElement("li");
+    const input = document.createElement("input");
+    const button = document.createElement("button");
+    const makeLi = document.createElement("li");
 
-  stuff.className = "stuff";
+    stuff.className = "stuff";
 
-  input.type = "checkbox";
-  input.className = "checkbox";
-  input.addEventListener("click", function () {
-    stuff.firstChild.classList.toggle("good");
-  });
+    input.type = "checkbox";
+    input.className = "checkbox";
+    input.addEventListener("click", function () {
+      stuff.firstChild.classList.toggle("good");
+    });
 
-  makeLi.className = "makeLi";
-  makeLi.innerText = realTask;
+    makeLi.className = "makeLi";
+    makeLi.innerText = realTask;
 
-  button.className = "deleteTask";
-  button.textContent = "X";
-  button.addEventListener("click", function () {
-    stuff.remove();
-  });
+    button.className = "deleteTask";
+    button.textContent = "X";
+    button.addEventListener("click", function () {
+      stuff.remove();
+    });
 
-  showTask.appendChild(stuff);
-  stuff.appendChild(makeLi);
-  stuff.appendChild(input);
-  stuff.appendChild(button);
-  form.reset();
+    showTask.appendChild(stuff);
+    stuff.appendChild(makeLi);
+    stuff.appendChild(input);
+    stuff.appendChild(button);
+    form.reset();
+  }
 }
 
 function newfucntion() {
